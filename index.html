@@ -3,11 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Halaman Rahasia</title>
+  <title>Halaman Rahasia untuk Pacar</title>
   <style>
     body {
       text-align: center;
       margin-top: 50px;
+      font-family: 'Arial', sans-serif;
+    }
+
+    h2 {
+      color: #ff69b4; /* Warna pink yang manis */
+    }
+
+    #passwordInput {
+      padding: 10px;
+      margin: 10px;
+      border: 2px solid #ff69b4; /* Warna pink yang manis */
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #ff69b4; /* Warna pink yang manis */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #d1478e; /* Warna pink yang sedikit lebih gelap saat hover */
+    }
+
+    #hasil {
+      margin-top: 20px;
+    }
+
+    p {
+      color: #d1478e; /* Warna pink yang sedikit lebih gelap */
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -25,7 +64,7 @@
       var kataKunci = document.getElementById("passwordInput").value;
 
       if (kataKunci === "gembul") {
-        document.getElementById("hasil").innerHTML = '<img src="gemes.png" alt="Gemes" style="max-width: 100%;">';
+        document.getElementById("hasil").innerHTML = '<img src="gemes.png" alt="Gemes">';
       } else {
         document.getElementById("hasil").innerHTML = '<p>Kata kunci salah. Coba lagi!</p>';
       }
