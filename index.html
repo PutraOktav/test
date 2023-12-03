@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expressing Love to Gembill</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #loveButton {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<button id="loveButton" onclick="showLovePopup()">Katakan Cinta ke Gembill</button>
+
+<script>
+    function showLovePopup() {
+        alert("Hai Gembill, aku mencintaimu! ❤️");
+
+        // Menampilkan gambar cinta setelah klik OK pada pop-up
+        var loveImage = document.createElement("img");
+        loveImage.src = "gemes.jpg"; // Ganti URL dengan URL gambar cinta yang sesuai
+        loveImage.alt = "Cinta";
+        loveImage.style.width = "100%";
+        loveImage.style.maxWidth = "400px";
+
+        var lovePopup = document.createElement("div");
+        lovePopup.appendChild(loveImage);
+
+        var popupContainer = document.createElement("div");
+        popupContainer.style.display = "flex";
+        popupContainer.style.alignItems = "center";
+        popupContainer.style.justifyContent = "center";
+        popupContainer.style.position = "fixed";
+        popupContainer.style.top = "0";
+        popupContainer.style.left = "0";
+        popupContainer.style.width = "100%";
+        popupContainer.style.height = "100%";
+        popupContainer.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+        popupContainer.appendChild(lovePopup);
+
+        document.body.appendChild(popupContainer);
+
+        // Menghilangkan pop-up setelah beberapa detik (misalnya, 5 detik)
+        setTimeout(function () {
+            document.body.removeChild(popupContainer);
+        }, 5000);
+    }
+</script>
+
+</body>
+</html>
