@@ -9,17 +9,15 @@
       text-align: center;
       margin-top: 50px;
       font-family: 'Arial', sans-serif;
-      overflow: hidden; /* Hide the overflow to prevent horizontal scrollbar */
-      animation: flowerAnimation 20s infinite; /* Apply the flower animation */
+      /* Add background animation CSS */
+      background: url('https://example.com/path/to/your/flower-background.jpg') fixed;
+      background-size: cover;
+      animation: bloom 30s infinite alternate;
     }
 
-    @keyframes flowerAnimation {
-      0%, 100% {
-        background-size: 100% 100%;
-      }
-      50% {
-        background-size: 120% 120%;
-      }
+    @keyframes bloom {
+      0% { filter: grayscale(100%); }
+      100% { filter: grayscale(0%); }
     }
 
     h2 {
@@ -66,14 +64,17 @@
 
   <h2>Masukkan Nama Suami untuk melanjutkan</h2>
 
+  <!-- Add the onkeydown attribute to listen for the Enter key -->
   <input type="password" id="passwordInput" placeholder="Kata Kunci" onkeydown="checkEnter(event)">
   <button onclick="cekKataKunci()">Masuk</button>
 
   <div id="hasil"></div>
 
   <script>
+    // Function to check if the Enter key is pressed
     function checkEnter(event) {
       if (event.key === "Enter") {
+        // Call the cekKataKunci function when Enter is pressed
         cekKataKunci();
       }
     }
