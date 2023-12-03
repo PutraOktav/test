@@ -3,32 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Halaman Romantis</title>
+  <title>Interaksi Romantis</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 50px;
+      font-family: 'Arial', sans-serif;
+    }
+
+    #gambarRomantis {
+      display: none;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
 
-<div id="romantic-content" style="display: none;">
-  <img src="gemes.jpg" alt="Gambar Romantis">
-  <audio controls>
-    <source src="https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID" type="audio/mp3">
-    Maaf, browser Anda tidak mendukung tag audio.
-  </audio>
-</div>
+  <h1>Selamat Datang!</h1>
+  <button onclick="tampilkanGambar()">Masuk</button>
 
-<button id="btnMasuk" onclick="tampilkanRomantis()">Masuk</button>
+  <div id="gambarContainer">
+    <img id="gambarRomantis" src="" alt="Romantis">
+  </div>
 
-<script>
-  function tampilkanRomantis() {
-    var romanticContent = document.getElementById('romantic-content');
-    var buttonMasuk = document.getElementById('btnMasuk');
+  <script>
+    function tampilkanGambar() {
+      var gambar = document.getElementById('gambarRomantis');
+      var gambarContainer = document.getElementById('gambarContainer');
 
-    // Menampilkan konten romantis
-    romanticContent.style.display = 'block';
+      // Set source gambar
+      gambar.src = 'gemes.jpg';
 
-    // Menyembunyikan tombol Masuk
-    buttonMasuk.style.display = 'none';
-  }
-</script>
-
+      // Tampilkan gambar dan sembunyikan tombol
+      gambar.style.display = 'block';
+      gambarContainer.removeChild(document.querySelector('button'));
+    }
+  </script>
 </body>
 </html>
