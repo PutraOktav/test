@@ -5,70 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WEB Khusus Gembill</title>
   <style>
-    body {
-      text-align: center;
-      margin-top: 50px;
-      font-family: 'Arial', sans-serif;
-    }
+  body {
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Arial', sans-serif;
+  }
 
-    h2 {
-      color: #ff69b4; /* Warna pink yang manis */
-    }
+  h2 {
+    color: #ff69b4;
+  }
 
-    #passwordInput {
-      padding: 10px;
-      margin: 10px;
-      border: 2px solid #ff69b4; /* Warna pink yang manis */
-      border-radius: 5px;
-    }
+  #passwordInput {
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid #ff69b4;
+    border-radius: 5px;
+  }
 
-    button {
-      padding: 10px;
-      background-color: #ff69b4; /* Warna pink yang manis */
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+  button {
+    padding: 10px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 
-    button:hover {
-      background-color: #d1478e; /* Warna pink yang sedikit lebih gelap saat hover */
-    }
+  button:hover {
+    background-color: #d1478e;
+  }
 
-    #hasil {
-      margin-top: 20px;
-    }
+  #hasil {
+    margin-top: 20px;
+  }
 
-    p {
-      color: #d1478e; /* Warna pink yang sedikit lebih gelap */
-    }
+  p {
+    color: #d1478e;
+  }
 
-    img {
-      max-width: 50%;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
-  </style>
+  img {
+    max-width: 50%;
+    border-radius: 50%; /* Set border-radius to make the image round */
+    margin-top: 10px;
+  }
+</style>
+
 </head>
 <body>
 
   <h2>Masukkan Nama Suami untuk melanjutkan</h2>
 
-  <input type="password" id="passwordInput" placeholder="Kata Kunci">
+  <!-- Add the onkeydown attribute to listen for the Enter key -->
+  <input type="password" id="passwordInput" placeholder="Kata Kunci" onkeydown="checkEnter(event)">
   <button onclick="cekKataKunci()">Masuk</button>
 
   <div id="hasil"></div>
 
   <script>
+    // Function to check if the Enter key is pressed
+    function checkEnter(event) {
+      if (event.key === "Enter") {
+        // Call the cekKataKunci function when Enter is pressed
+        cekKataKunci();
+      }
+    }
+
     function cekKataKunci() {
       var kataKunci = document.getElementById("passwordInput").value;
 
       if (kataKunci === "gembul") {
         document.getElementById("hasil").innerHTML = `
-          <img src="gemes.png" alt="Gemes" style="max-width: 50%;">
-          <p style="text-align: justify;>Selamat pagi, istriku tercinta, Gembill! Hari ini aku ingin mengirimkan energi positif untukmu yang sedang fokus mengejar cita-cita dalam dunia kuliah dan jurnal. Aku yakin bahwa semangatmu akan menjadi pendorong untuk meraih kesuksesan. Ketika kau membagikan pengalamanmu dan cerita tentang studi serta penelitian, hatiku penuh kebanggaan melihat betapa tekun dan cerdasnya dirimu. Semoga langkah-langkahmu selalu diberkahi, dan aku berdoa agar setiap usahamu membuahkan hasil yang gemilang.</p>
-          <p style="text-align: justify;>Tak terasa waktu begitu cepat berlalu, dan kita terus melangkah bersama melalui lika-liku kehidupan. Gembill, senyummu adalah sumber kebahagiaanku, dan melihatmu bersemangat mengejar ilmu di kampus membuat hatiku begitu bersyukur. Kesehatanmu adalah harta berharga, dan aku berdoa agar selalu ada perlindungan untukmu. Terimakasih, istriku, karena menjadi pendamping yang luar biasa. Aku yakin bahwa dengan semangat dan keuletanmu, masa depan kita akan penuh dengan prestasi dan kebahagiaan.</p>
-          <p style="text-align: justify;>Gembill, namamu menjadi pelipur hatiku, dan setiap hari bersamamu adalah anugerah. Meski kadang kita dihadapkan pada tantangan, tetapi bersamamu, semuanya terasa lebih ringan. Semoga setiap langkah yang kau ambil membawa kesuksesan dan kebahagiaan. Aku akan selalu ada di sampingmu, mendukung dan mencintaimu. Terima kasih, istriku, atas segala yang kau lakukan. Semoga hari-harimu dipenuhi dengan keceriaan dan setiap langkahmu menuju kesuksesan selalu diberkahi.</p>
+          <!-- Your content with image and paragraphs -->
         `;
       } else {
         document.getElementById("hasil").innerHTML = '<p>Kata kunci salah. Coba lagi!</p>';
