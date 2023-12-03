@@ -5,67 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WEB Khusus Gembill</title>
   <style>
-  body {
-    text-align: center;
-    margin-top: 50px;
-    font-family: 'Arial', sans-serif;
-  }
+    body {
+      text-align: center;
+      margin-top: 50px;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden; /* Hide the overflow to prevent horizontal scrollbar */
+      animation: flowerAnimation 20s infinite; /* Apply the flower animation */
+    }
 
-  h2 {
-    color: #ff69b4;
-  }
+    @keyframes flowerAnimation {
+      0%, 100% {
+        background-size: 100% 100%;
+      }
+      50% {
+        background-size: 120% 120%;
+      }
+    }
 
-  #passwordInput {
-    padding: 10px;
-    margin: 10px;
-    border: 2px solid #ff69b4;
-    border-radius: 5px;
-  }
+    h2 {
+      color: #ff69b4;
+    }
 
-  button {
-    padding: 10px;
-    background-color: #ff69b4;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+    #passwordInput {
+      padding: 10px;
+      margin: 10px;
+      border: 2px solid #ff69b4;
+      border-radius: 5px;
+    }
 
-  button:hover {
-    background-color: #d1478e;
-  }
+    button {
+      padding: 10px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-  #hasil {
-    margin-top: 20px;
-  }
+    button:hover {
+      background-color: #d1478e;
+    }
 
-  p {
-    color: #d1478e;
-  }
+    #hasil {
+      margin-top: 20px;
+    }
 
-  img {
-    max-width: 50%;
-    border-radius: 50%; /* Set border-radius to make the image round */
-    margin-top: 10px;
-  }
-</style>
+    p {
+      color: #d1478e;
+      text-align: justify;
+    }
 
+    img {
+      max-width: 50%;
+      border-radius: 50%;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
 
   <h2>Masukkan Nama Suami untuk melanjutkan</h2>
 
-  <!-- Add the onkeydown attribute to listen for the Enter key -->
   <input type="password" id="passwordInput" placeholder="Kata Kunci" onkeydown="checkEnter(event)">
   <button onclick="cekKataKunci()">Masuk</button>
 
   <div id="hasil"></div>
 
   <script>
-    // Function to check if the Enter key is pressed
     function checkEnter(event) {
       if (event.key === "Enter") {
-        // Call the cekKataKunci function when Enter is pressed
         cekKataKunci();
       }
     }
@@ -76,9 +84,9 @@
       if (kataKunci === "gembul") {
         document.getElementById("hasil").innerHTML = `
           <img src="gemes.png" alt="Gemes" style="max-width: 50%;">
-          <p style="text-align: justify;>Selamat pagi, istriku tercinta, Gembill! Hari ini aku ingin mengirimkan energi positif untukmu yang sedang fokus mengejar cita-cita dalam dunia kuliah dan jurnal. Aku yakin bahwa semangatmu akan menjadi pendorong untuk meraih kesuksesan. Ketika kau membagikan pengalamanmu dan cerita tentang studi serta penelitian, hatiku penuh kebanggaan melihat betapa tekun dan cerdasnya dirimu. Semoga langkah-langkahmu selalu diberkahi, dan aku berdoa agar setiap usahamu membuahkan hasil yang gemilang.</p>
-          <p style="text-align: justify;>Tak terasa waktu begitu cepat berlalu, dan kita terus melangkah bersama melalui lika-liku kehidupan. Gembill, senyummu adalah sumber kebahagiaanku, dan melihatmu bersemangat mengejar ilmu di kampus membuat hatiku begitu bersyukur. Kesehatanmu adalah harta berharga, dan aku berdoa agar selalu ada perlindungan untukmu. Terimakasih, istriku, karena menjadi pendamping yang luar biasa. Aku yakin bahwa dengan semangat dan keuletanmu, masa depan kita akan penuh dengan prestasi dan kebahagiaan.</p>
-          <p style="text-align: justify;>Gembill, namamu menjadi pelipur hatiku, dan setiap hari bersamamu adalah anugerah. Meski kadang kita dihadapkan pada tantangan, tetapi bersamamu, semuanya terasa lebih ringan. Semoga setiap langkah yang kau ambil membawa kesuksesan dan kebahagiaan. Aku akan selalu ada di sampingmu, mendukung dan mencintaimu. Terima kasih, istriku, atas segala yang kau lakukan. Semoga hari-harimu dipenuhi dengan keceriaan dan setiap langkahmu menuju kesuksesan selalu diberkahi.</p>
+          <p>Selamat pagi, istriku tercinta, Gembill! Hari ini aku ingin mengirimkan energi positif untukmu yang sedang fokus mengejar cita-cita dalam dunia kuliah dan jurnal. Aku yakin bahwa semangatmu akan menjadi pendorong untuk meraih kesuksesan. Ketika kau membagikan pengalamanmu dan cerita tentang studi serta penelitian, hatiku penuh kebanggaan melihat betapa tekun dan cerdasnya dirimu. Semoga langkah-langkahmu selalu diberkahi, dan aku berdoa agar setiap usahamu membuahkan hasil yang gemilang.</p>
+          <p>Tak terasa waktu begitu cepat berlalu, dan kita terus melangkah bersama melalui lika-liku kehidupan. Gembill, senyummu adalah sumber kebahagiaanku, dan melihatmu bersemangat mengejar ilmu di kampus membuat hatiku begitu bersyukur. Kesehatanmu adalah harta berharga, dan aku berdoa agar selalu ada perlindungan untukmu. Terimakasih, istriku, karena menjadi pendamping yang luar biasa. Aku yakin bahwa dengan semangat dan keuletanmu, masa depan kita akan penuh dengan prestasi dan kebahagiaan.</p>
+          <p>Gembill, namamu menjadi pelipur hatiku, dan setiap hari bersamamu adalah anugerah. Meski kadang kita dihadapkan pada tantangan, tetapi bersamamu, semuanya terasa lebih ringan. Semoga setiap langkah yang kau ambil membawa kesuksesan dan kebahagiaan. Aku akan selalu ada di sampingmu, mendukung dan mencintaimu. Terima kasih, istriku, atas segala yang kau lakukan. Semoga hari-harimu dipenuhi dengan keceriaan dan setiap langkahmu menuju kesuksesan selalu diberkahi.</p>
         `;
       } else {
         document.getElementById("hasil").innerHTML = '<p>Kata kunci salah. Coba lagi!</p>';
