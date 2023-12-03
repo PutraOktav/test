@@ -1,48 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surprise Gemes</title>
-    <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        #surprise-container {
-            text-align: center;
-        }
-        #gemes-image {
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Romantis</title>
 </head>
 <body>
 
-<div id="surprise-container">
-    <button onclick="showSurprise()">Masuk</button>
-    <img id="gemes-image" src="gemes.jpg" alt="Gemes">
-    <audio id="backsound" controls>
-        <source src="https://www.youtube.com/watch?v=qUgbR9zINIs" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
+<div id="romantic-content" style="display: none;">
+  <img src="gemes.jpg" alt="Gambar Romantis">
+  <audio controls>
+    <source src="https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID" type="audio/mp3">
+    Maaf, browser Anda tidak mendukung tag audio.
+  </audio>
 </div>
 
+<button id="btnMasuk" onclick="tampilkanRomantis()">Masuk</button>
+
 <script>
-    function showSurprise() {
-        var gemesImage = document.getElementById("gemes-image");
-        var backsound = document.getElementById("backsound");
+  function tampilkanRomantis() {
+    var romanticContent = document.getElementById('romantic-content');
+    var buttonMasuk = document.getElementById('btnMasuk');
 
-        // Menampilkan gambar
-        gemesImage.style.display = "block";
+    // Menampilkan konten romantis
+    romanticContent.style.display = 'block';
 
-        // Memainkan backsound
-        backsound.play();
-    }
+    // Menyembunyikan tombol Masuk
+    buttonMasuk.style.display = 'none';
+  }
 </script>
 
 </body>
