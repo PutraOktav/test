@@ -1,77 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinta untuk Gembill</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            margin-top: 50px;
-            background-color: #ffecf2; /* Warna romantis */
-            color: #ff4d6e; /* Warna teks romantis */
-        }
-        #popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 236, 242, 0.9); /* Warna latar belakang pop-up */
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
-        }
-        #popup img {
-            max-width: 80%;
-            max-height: 80%;
-        }
-        #popup-name {
-            display: none;
-        }
-        #enter-button, #submit-button {
-            background-color: #ff4d6e; /* Warna tombol romantis */
-            color: #fff;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            margin-top: 10px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interaksi Romantis</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 50px;
+      font-family: 'Arial', sans-serif;
+    }
+
+    #gambarRomantis {
+      display: none;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Cinta untuk Gembill</h1>
 
-    <button id="enter-button" onclick="showNamePopup()">Klik Masuk</button>
+  <h1>Selamat Datang!</h1>
+  <button onclick="tampilkanGambar()">Masuk</button>
 
-    <div id="popup-name">
-        <label for="name">Masukkan Nama:</label>
-        <input type="text" id="name" placeholder="Nama">
-        <button id="submit-button" onclick="showLove()">Kirim Cinta</button>
-    </div>
+  <div id="gambarContainer">
+    <img id="gambarRomantis" src="" alt="Romantis">
+  </div>
 
-    <div id="popup">
-        <img src="gemes.png" alt="Gemes">
-    </div>
+  <script>
+    function tampilkanGambar() {
+      var gambar = document.getElementById('gambarRomantis');
+      var gambarContainer = document.getElementById('gambarContainer');
 
-    <script>
-        function showNamePopup() {
-            document.getElementById("popup-name").style.display = "block";
-            document.getElementById("enter-button").style.display = "none";
-        }
+      // Set source gambar
+      gambar.src = 'gemes.jpg';
 
-        function showLove() {
-            var name = document.getElementById("name").value;
-            var greeting = name ? "Cinta untuk " + name + "!" : "Cinta untuk Gembill!";
-            
-            document.getElementById("popup-name").style.display = "none";
-            document.getElementById("popup").style.display = "flex";
-
-            alert(greeting);
-        }
-    </script>
+      // Tampilkan gambar dan sembunyikan tombol
+      gambar.style.display = 'block';
+      gambarContainer.removeChild(document.querySelector('button'));
+    }
+  </script>
 </body>
 </html>
