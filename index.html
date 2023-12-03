@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Halaman Rahasia untuk Pacar</title>
+  <title>Halaman Rahasia</title>
   <style>
     body {
       text-align: center;
@@ -64,7 +64,10 @@
       var kataKunci = document.getElementById("passwordInput").value;
 
       if (kataKunci === "gembul") {
-        document.getElementById("hasil").innerHTML = '<img src="gemes.png" alt="Gemes">';
+        document.getElementById("hasil").innerHTML = `
+          <img src="gemes.png" alt="Gemes" style="max-width: 100%;">
+          <p>Semangat kuliah, jurnal, dan selalu sehat! Terimakasih karena selalu ada untukku, istri gembilku. 💖</p>
+        `;
       } else {
         document.getElementById("hasil").innerHTML = '<p>Kata kunci salah. Coba lagi!</p>';
       }
