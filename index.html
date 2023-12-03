@@ -1,48 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Romantis</title>
-    <style>
-        body {
-            text-align: center;
-            font-family: 'Arial', sans-serif;
-        }
-        #form-container {
-            margin-top: 100px;
-        }
-        #image-container {
-            display: none;
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Rahasia</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
 
-    <div id="form-container">
-        <label for="password">Masukkan kata kunci: </label>
-        <input type="password" id="password" placeholder="Kata Kunci">
-        <button onclick="checkPassword()">Masuk</button>
-    </div>
+  <h2>Masukkan kata kunci untuk melanjutkan</h2>
 
-    <div id="image-container">
-        <img src="gemes.jpg" alt="Gemes">
-    </div>
+  <input type="password" id="passwordInput" placeholder="Kata Kunci">
+  <button onclick="cekKataKunci()">Masuk</button>
 
-    <script>
-        function checkPassword() {
-            var passwordInput = document.getElementById("password").value;
+  <div id="hasil"></div>
 
-            if (passwordInput.toLowerCase() === "gembul") {
-                // Jika kata kunci benar, tampilkan gambar
-                document.getElementById("form-container").style.display = "none";
-                document.getElementById("image-container").style.display = "block";
-            } else {
-                alert("Kata kunci salah. Coba lagi!");
-            }
-        }
-    </script>
+  <script>
+    function cekKataKunci() {
+      var kataKunci = document.getElementById("passwordInput").value;
+
+      if (kataKunci === "gembul") {
+        document.getElementById("hasil").innerHTML = '<img src="gemes.jpg" alt="Gemes" style="max-width: 100%;">';
+      } else {
+        document.getElementById("hasil").innerHTML = '<p>Kata kunci salah. Coba lagi!</p>';
+      }
+    }
+  </script>
 
 </body>
 </html>
