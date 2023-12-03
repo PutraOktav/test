@@ -2,40 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surprise Romantis</title>
+    <title>Surprise Gemes</title>
     <style>
         body {
-            text-align: center;
-            padding: 50px;
-            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
         }
-        #image-container {
+        #surprise-container {
+            text-align: center;
+        }
+        #gemes-image {
             display: none;
-            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Selamat Datang, Cinta!</h1>
-    <button onclick="showImageAndMusic()">Masuk</button>
-    <div id="image-container">
-        <img src="gemes.jpg" alt="Gemes" width="300">
-    </div>
-    <iframe id="music-player" width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1" frameborder="0" allowfullscreen></iframe>
 
-    <script>
-        function showImageAndMusic() {
-            var imageContainer = document.getElementById('image-container');
-            var musicPlayer = document.getElementById('music-player');
+<div id="surprise-container">
+    <button onclick="showSurprise()">Masuk</button>
+    <img id="gemes-image" src="gemes.jpg" alt="Gemes">
+    <audio id="backsound" controls>
+        <source src="https://www.youtube.com/watch?v=qUgbR9zINIs" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</div>
 
-            // Tampilkan gambar
-            imageContainer.style.display = 'block';
+<script>
+    function showSurprise() {
+        var gemesImage = document.getElementById("gemes-image");
+        var backsound = document.getElementById("backsound");
 
-            // Tampilkan pemutar musik
-            musicPlayer.src = 'https://www.youtube.com/watch?v=qUgbR9zINIs';
-        }
-    </script>
+        // Menampilkan gambar
+        gemesImage.style.display = "block";
+
+        // Memainkan backsound
+        backsound.play();
+    }
+</script>
+
 </body>
 </html>
